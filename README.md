@@ -36,4 +36,21 @@
 
 1 - Clonar o repositório:
 ```bash
-git clone 
+git clone https://github.com/MuriloDeSouza/Culling_Games.git
+```
+
+2 - Ter o ROS instalado no computador para rodar esses comando na pasta raiz
+```bash
+colcon build
+source install/local_setup.bash 
+```
+
+3 - Rodar o comando para abrir o mapa na pasta raiz do projeto
+```bash
+ros2 run cg maze
+```
+
+4 - Estar no caminho determinado "/src/cg/cg" e rodar o comando
+```bash
+python3 client_cmd.py
+```
