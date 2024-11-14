@@ -54,3 +54,4 @@ ros2 run cg maze
 ```bash
 python3 client_cmd.py
 ```
+
