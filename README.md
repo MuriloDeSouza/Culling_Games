@@ -39,7 +39,7 @@
 git clone https://github.com/MuriloDeSouza/Culling_Games.git
 ```
 
-2 - Ter o ROS instalado no computador para rodar esses comando na pasta raiz
+2 -**Ter o ROS instalado no computador para rodar esses comando na pasta raiz, caso você não tenha o ROS instalado na sua máquina, eu cou deixar disponibilizado o material para a instalação no final da documentação**
 ```bash
 colcon build
 source install/local_setup.bash 
@@ -54,4 +54,19 @@ ros2 run cg maze
 ```bash
 python3 client_cmd.py
 ```
+&emsp;&emsp; Depois que rodou esse código é só esperar um pouco, você vai conseguir ver o pontinho se movimentando por todo o mapa, guardando todas as posições que ele ja fez para não repetir, até chegar no objetivo que é o pontinho vermelho.
 
+
+# Link do material para baixar o ROS
+
+&emsp;&emsp; Esse manual de instalação foi feito por um professor de minha instituição, se seguir os passos conforme o descrito, vai conseguir instalar o ROS. Pegue o link abaixo e cole na sua aba de pesquisa:
+```bash
+https://rmnicola.github.io/m6-ec-encontros/O01/ros
+```
+
+# Referências
+
+&emsp;&emsp; Essa documentação foi de grande valia para mim por que eu consegui entender um pouco mais sobre os "Nós" dos clientes e dos serviços (em inglês se fala Publisher que é uma forma de publicar as informações).
+[1] ROS 2 Documentation: Iron. Escrever uma editora e assinante simples (Python) Disponível em: [https://docs.ros.org/en/iron/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html](https://docs.ros.org/en/iron/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Publisher-And-Subscriber.html). Acesso em: 12 novembro. 2024.
+
+[2] ROS 2 Documentation: Iron. Escrever um serviço simples e um cliente (Python) Disponível em: [https://docs.ros.org/en/iron/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Service-And-Client.html](https://docs.ros.org/en/iron/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Py-Service-And-Client.html). Acesso em: 12 novembro. 2024.
