@@ -56,6 +56,8 @@ python3 client_cmd.py
 ```
 &emsp;&emsp; Depois que rodou esse código é só esperar um pouco, você vai conseguir ver o pontinho se movimentando por todo o mapa, guardando todas as posições que ele ja fez para não repetir, até chegar no objetivo que é o pontinho vermelho.
 
+# Entendendo o código "client_cmd.py"
+
 
 # Link do material para baixar o ROS
 
