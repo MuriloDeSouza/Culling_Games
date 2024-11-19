@@ -206,6 +206,101 @@ Combina técnicas de exploração completa e busca orientada para reduzir o temp
 https://rmnicola.github.io/m6-ec-encontros/O01/ros
 ```
 
+# Entendendo a lógica do código "busca_mapa.py"
+
+## Classe MapNavigation
+
+### Objetivo do Sistema
+
+&emsp;&emsp; O código implementa um sistema de navegação autônoma para um robô em um ambiente representado por um mapa 2D (labirinto). Utiliza o framework ROS 2 para comunicação, com serviços de movimentação (/move_command) e obtenção de mapas (/get_map). O sistema encontra o caminho do robô até um alvo utilizando o algoritmo A* (A-estrela).
+Descrição Geral
+
+## O sistema tem os seguintes componentes principais:
+
+**Obtenção do mapa:** Requisita o mapa do ambiente em forma de matriz 2D.
+**Planejamento de Caminho:** Utiliza o algoritmo A* para calcular o caminho do ponto inicial ao alvo, considerando obstáculos.
+**Movimentação do Robô:** Envia comandos de direção ao robô para segui-lo até o destino.
+
+## Arquitetura do Código
+
+**Importações**
+
+**rclpy:** Biblioteca ROS 2 em Python.
+**cg_interfaces.srv:** Define os serviços personalizados de movimentação (MoveCmd) e obtenção de mapa (GetMap).
+**heapq:** Usada para implementar a fila de prioridade no algoritmo A*.
+
+## Classe MapNavigation
+__init__
+
+* - Inicializa o nó e os clientes ROS 2.
+* - Aguarda os serviços estarem disponíveis.
+* - Obtém o mapa, identifica as posições inicial e alvo, e calcula o caminho.
+
+## get_map()
+
+* - Faz requisição ao serviço /get_map.
+* - Reconstrói o mapa 2D a partir de uma lista linear recebida.
+
+## find_positions(map_2d)
+
+* - Procura as posições inicial (r) e alvo (t) no mapa.
+
+## plan_path(start, target)
+
+**Implementa o algoritmo A* para calcular o caminho mais curto.**
+    * - G-Score: Custo acumulado.
+    * - F-Score: Custo acumulado + heurística (distância Manhattan).
+    * - Considera vizinhos válidos, ignorando obstáculos (b).
+
+## heuristic(pos, target)
+
+* - Calcula a distância Manhattan entre duas posições.
+
+## get_neighbors(pos)
+
+* - Retorna vizinhos válidos de uma posição no mapa, com as direções correspondentes.
+
+## reconstruct_path(came_from, current)
+
+* - Reconstrói o caminho da posição inicial ao alvo utilizando o dicionário came_from.
+
+## navigate()
+
+* - Percorre o caminho planejado enviando comandos de movimento ao robô.
+
+## send_move_request(direction)
+
+* - Envia requisições para mover o robô em uma direção específica.
+
+## Função main()
+
+* - Inicializa o nó, cria a instância de navegação e executa o plano.
+
+## Fluxo do Sistema
+
+**Inicialização:**
+    * - O nó ROS inicia e estabelece conexões com os serviços.
+**Obtenção do Mapa:**
+    * - O sistema solicita o mapa 2D e reconstrói a matriz.
+**Identificação das Posições:**
+    * - Encontra as coordenadas do robô e do alvo.
+**Planejamento do Caminho:**
+    * - O algoritmo A* calcula o caminho mais eficiente até o alvo.
+**Execução da Navegação:**
+    * - O sistema envia comandos de movimentação ao robô, seguindo o caminho calculado.
+
+## Tecnologias e Ferramentas
+
+**ROS 2:** Para comunicação entre o sistema e os serviços.
+**Python:** Para implementar lógica de controle e algoritmos.
+**Algoritmo A*:** Para planejamento de caminhos.
+
+## Melhorias e Considerações
+
+**Tratamento de Erros:** Adicionar verificações para falhas nos serviços.
+**Performance:** Analisar desempenho em mapas grandes.
+**Extensibilidade:** Suporte a múltiplos robôs ou mapas dinâmicos.
+
 # Referências
 
 &emsp;&emsp; Essa documentação foi de grande valia para mim por que eu consegui entender um pouco mais sobre os "Nós" dos clientes e dos serviços (em inglês se fala Publisher que é uma forma de publicar as informações).
