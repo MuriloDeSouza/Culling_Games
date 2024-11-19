@@ -50,7 +50,7 @@ class ReactiveNavigator(Node):
         queue = deque([(self.current_position, None)])  # Começa na posição inicial, sem direção de chegada
         
         while queue:
-            time.sleep(1)  # Adiciona um pequeno delay para visualizar a navegação
+            # time.sleep(1)  # Adiciona um pequeno delay para visualizar a navegação
 
             # Remove o primeiro item da fila (posição atual e direção para chegar nela)
             current_position, direction_to_get_here = queue.popleft()
