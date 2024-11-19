@@ -198,14 +198,6 @@ Combina técnicas de exploração completa e busca orientada para reduzir o temp
 
 &emsp;&emsp; O código "reactive_navigation.py" é uma solução bem estruturada para navegação reativa. Ele utiliza conceitos de exploração, priorização e backtracking para navegar em ambientes desconhecidos, equilibrando eficiência e robustez.
 
-
-# Link do material para baixar o ROS
-
-&emsp;&emsp; Esse manual de instalação foi feito por um professor de minha instituição, se seguir os passos conforme o descrito, vai conseguir instalar o ROS. Pegue o link abaixo e cole na sua aba de pesquisa:
-```bash
-https://rmnicola.github.io/m6-ec-encontros/O01/ros
-```
-
 # Entendendo a lógica do código "busca_mapa.py"
 
 ## Classe MapNavigation
@@ -300,6 +292,13 @@ __init__
 **Tratamento de Erros:** Adicionar verificações para falhas nos serviços.
 **Performance:** Analisar desempenho em mapas grandes.
 **Extensibilidade:** Suporte a múltiplos robôs ou mapas dinâmicos.
+
+# Link do material para baixar o ROS
+
+&emsp;&emsp; Esse manual de instalação foi feito por um professor de minha instituição, se seguir os passos conforme o descrito, vai conseguir instalar o ROS. Pegue o link abaixo e cole na sua aba de pesquisa:
+```bash
+https://rmnicola.github.io/m6-ec-encontros/O01/ros
+```
 
 # Referências
 
